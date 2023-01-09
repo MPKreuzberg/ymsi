@@ -1,0 +1,66 @@
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 4rem;
+    background-color: #1A1A1B;
+    position: sticky;
+    top: 0;
+}
+.logo{
+    display: flex;
+    height: 4rem;
+}
+.logo img{
+    width: 5rem;
+    height: 4rem;
+}
+
+#nav-search{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 4px;
+    background-color: #272729;
+    border: none;
+}
+#nav-search::placeholder{
+    color: rgba(255, 255, 255, 0.718);
+    padding: 1rem;
+}
+
+
+.nav-btns{
+    width: 15rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.signup{
+    width: 4.5rem;
+    height: 1.5rem;
+    border-radius: 14px;
+    background-color: #717171;
+    color: white;
+    font-weight: bold;
+}
+.login{
+    width: 4.5rem;
+    height: 1.5rem;
+    border-radius: 14px;
+    background-color: #717171;
+    color: white;
+    font-weight: bold;
+}
+.profile{
+    background: transparent;
+    border: none;
+}
+#profile-icon{
+    height: 3rem;
+    width: 3rem;
+    color: white;
+}
