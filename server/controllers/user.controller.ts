@@ -1,8 +1,10 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { User } from '../models/user';
-import { UserGroup } from '../models/usergroup';
-import { userController } from '../controllers/userController';
+import User from '../models/userSchema';
+import UserGroup from '../models/userGroup'
+
+
+const userController = express.Router();
 
 
 
@@ -70,7 +72,7 @@ userController.post(
 userController.post('/register', (req, res) => {
   const { username, email, password } = req.body;
   User.findOne({ email }).then(user => {
-    UserGroup.findOne({ auth_level: 2 }).then(usergroup => {
+    UserGroup.findOne({ auth_level: 2 }).then(IUserGroup => {
       if (user) {
         return res.status(400).json({ msg: 'Email already in use.' });
       } else {
@@ -78,7 +80,7 @@ userController.post('/register', (req, res) => {
           username,
           email,
           password,
-          usergroup: usergroup._id,
+          IUserGroup: IUserGroup._id,
         });
 
         bcrypt.genSalt(10, (genErr, salt) => {
