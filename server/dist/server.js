@@ -8,7 +8,7 @@ const app = (0, express_1.default)();
 const port = 4000;
 app.use(express_1.default.json());
 app.get('/users', (req, res) => {
-    res.send('Hello from users!');
+    res.send('Hello from NVI!');
 });
 app.listen(port, () => {
     console.log(`Forum backend listening on port ${port}!`);

@@ -1,19 +1,25 @@
+import dotenv from 'dotenv'
 import express from 'express'
+import morgan from 'morgan'
+import usersRoute from './routes/userRoutes'
 
 
 
+dotenv.config()
 const app = express()
-const port = 4000
+const port = process.env.PORT || 80
 
-app.use(express.json())
+app.use(morgan("dev"))
 
-app.get('/', (req, res) => {
-    res.send('Hello from users!')
-    })
-    
+
+
+app.use(usersRoute)
+
+
+ 
 
 
 app.listen(port, () => {
-    console.log(`Forum backend listening on port ${port}!`);
+    console.log(`Forum backend is running on port ${port}!`);
   });
-  
+

@@ -1,16 +1,25 @@
 import mongoose, { Schema, Document } from "mongoose"
+import shortid from "shortid"
+
 
 export interface IPost extends Document {
-    title: string;
-    createdAt: Date;
-    updatedAt: Date;
+	shortId: string;
+	message: string;
+	author: string;
+	topis: string;
+	timestamp: number;
 }
 
+
+
 const postSchema: Schema = new Schema({
-    title: { type: String, required: true, },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-});
+	shortid: { type: String, default: shortid.generate },
+    message: { type: String, required: true, },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+	topic: { type: mongoose.Schema.Types.ObjectId, ref: 'Topic' },
+},
+{ timestamps: true }
+	);
 
 export default mongoose.model<IPost>('Post', postSchema);
 

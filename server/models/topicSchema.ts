@@ -1,18 +1,30 @@
 import mongoose, { Schema, Document }  from 'mongoose'
+import shortid from 'shortid'
+
+
 
 export interface ITopic extends Document {
+	shortId: string;
     title: string;
-    description: string;
-    createdAt: Date;
-    updatedAt: Date;
+    subtitle: string;
+	subcategory: string;
+	author: string;
+	posts: string;
+	lastpost:string;
+	timestamp: number;
 }
 
 const topicSchema: Schema = new Schema({
+	shortId: { type: String, default: shortid.generate },
     title: { type: String, required: true, },
-    description: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-});
+	subtitle: { type: String, required: false, },
+	subcategory: { type: mongoose.Schema.Types.ObjectId, ref: 'Subcategory' },
+	author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+	posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
+	lastpost: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
+    },
+	{ timestamps: true }
+);
 
 export default mongoose.model<ITopic>('Topic', topicSchema);
 
