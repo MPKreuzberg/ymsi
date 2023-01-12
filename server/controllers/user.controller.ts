@@ -1,20 +1,18 @@
-import express, { Request, Response } from 'express';
-import dotenv from 'dotenv';
-import User from '../models/userSchema';
-import UserGroup from '../models/userGroup'
-
+import express, { Request, Response } from "express";
+import passport from "passport";
+import bcrypt from "bcrypt";
+import User from "../models/userSchema";
+import UserGroup from "../models/userGroup";
 
 const userController = express.Router();
 
-
-
-/ [/api/users] /
+/ [/api/users] /;
 // GET (PUBLIC)
 // retrieve all users
-userController.get('/', (req, res) => {
+userController.get("/", (req, res) => {
   User.find()
-    .populate('usergroup')
-    .then(users => {
+    .populate("usergroup")
+    .then((users) => {
       res.status(200).json({
         users,
       });
@@ -24,11 +22,11 @@ userController.get('/', (req, res) => {
 // [/api/users] /:id
 // GET (PUBLIC)
 // get info from a single user
-userController.get('/:id', (req, res) => {
+userController.get("/:id", (req, res) => {
   User.findById(req.params.id)
-    .then(user => res.status(200).json({ user }))
-    .catch(err =>
-      res.status(400).json({ msg: 'Failed to get info of user', err })
+    .then((user) => res.status(200).json({ user }))
+    .catch((err) =>
+      res.status(400).json({ msg: "Failed to get info of user", err })
     );
 });
 
@@ -36,15 +34,15 @@ userController.get('/:id', (req, res) => {
 // POST (PRIVATE)
 // update an user
 userController.post(
-  '/update',
-  passport.authenticate('jwt', { session: false }),
+  "/update",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     User.findByIdAndUpdate(req.body.id, req.body, {
       useFindAndModify: false,
     })
-      .then(user => res.status(200).json({ msg: 'User updated', user }))
-      .catch(err =>
-        res.status(400).json({ msg: 'Failed to update user', err })
+      .then((user) => res.status(200).json({ msg: "User updated", user }))
+      .catch((err) =>
+        res.status(400).json({ msg: "Failed to update user", err })
       );
   }
 );
@@ -53,13 +51,13 @@ userController.post(
 // DELETE (PRIVATE)
 // delete an user
 userController.post(
-  '/delete',
-  passport.authenticate('jwt', { session: false }),
+  "/delete",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     User.findByIdAndDelete(req.body.id)
-      .then(() => res.status(200).json({ msg: 'User deleted' }))
-      .catch(err =>
-        res.status(400).json({ msg: 'Failed to delete user', err })
+      .then(() => res.status(200).json({ msg: "User deleted" }))
+      .catch((err) =>
+        res.status(400).json({ msg: "Failed to delete user", err })
       );
   }
 );
@@ -69,12 +67,12 @@ userController.post(
 // [/api/users] /register
 // POST (PUBLIC)
 // register a new user
-userController.post('/register', (req, res) => {
+userController.post("/register", (req, res) => {
   const { username, email, password } = req.body;
-  User.findOne({ email }).then(user => {
-    UserGroup.findOne({ auth_level: 2 }).then(IUserGroup => {
+  User.findOne({ email }).then((user) => {
+    UserGroup.findOne({ auth_level: 2 }).then((IUserGroup) => {
       if (user) {
-        return res.status(400).json({ msg: 'Email already in use.' });
+        return res.status(400).json({ msg: "Email already in use." });
       } else {
         const newUser = new User({
           username,
@@ -90,9 +88,9 @@ userController.post('/register', (req, res) => {
             newUser.password = hash;
             newUser
               .save()
-              .then(user => res.status(200).json({ user }))
-              .catch(err =>
-                res.status(400).json({ msg: 'Failed to register user.', err })
+              .then((user) => res.status(200).json({ user }))
+              .catch((err) =>
+                res.status(400).json({ msg: "Failed to register user.", err })
               );
           });
         });
@@ -104,22 +102,22 @@ userController.post('/register', (req, res) => {
 // [/api/users] /login
 // POST (PUBLIC)
 // login a user
-userController.post('/login', (req, res) => {
+userController.post("/login", (req, res) => {
   const { email, password } = req.body;
-  User.findOne({ email }, '+password').then(user => {
+  User.findOne({ email }, "+password").then((user) => {
     if (!user) {
-      return res.status(404).json({ msg: 'This user does not exists.' });
+      return res.status(404).json({ msg: "This user does not exists." });
     }
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
         const payload = {
           id: user._id,
-          username: user.username,
+          username: user.userName,
         };
 
         jwt.sign(payload, secret, { expiresIn: 36000 }, (err, token) => {
           if (err) {
-            res.status(500).json({ msg: 'Error signing token.', err });
+            res.status(500).json({ msg: "Error signing token.", err });
           }
 
           res.status(200).json({
@@ -127,15 +125,14 @@ userController.post('/login', (req, res) => {
             token,
             user: {
               id: user._id,
-              username: user.username,
+              username: user.userName,
               email: user.email,
             },
           });
         });
       } else {
-        res.status(400).json({ msg: 'Password is incorrect.' });
+        res.status(400).json({ msg: "Password is incorrect." });
       }
     });
   });
 });
-
