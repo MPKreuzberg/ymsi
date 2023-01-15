@@ -10,8 +10,11 @@ export interface ITopic extends Document {
 	subcategory: string;
 	author: string;
 	posts: string;
-	lastpost:string;
-	timestamp: number;
+	lastpost: string;
+	createdAt: number;
+	editedAt: number;
+	//timestamp: number;
+	
 }
 
 const topicSchema: Schema = new Schema({
@@ -22,8 +25,10 @@ const topicSchema: Schema = new Schema({
 	author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 	posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
 	lastpost: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
+	createdAt: { type: Date, default: Date.now },
+	editedAt: {type: Date, default: Date.now}
     },
-	{ timestamps: true }
+	//{ timestamps: true }
 );
 
 export default mongoose.model<ITopic>('Topic', topicSchema);

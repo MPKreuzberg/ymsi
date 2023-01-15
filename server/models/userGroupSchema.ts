@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 
 export interface IUserGroup extends Document {
   name: string;
-  auth_level: number;
+  auth_level: string;
   users: string;
 }
 
@@ -13,7 +13,7 @@ const userGroupSchema: Schema = new Schema({
     unique: true,
   },
   auth_level: {
-    type: Number,
+    type: String,
     required: true,
   },
   users: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],

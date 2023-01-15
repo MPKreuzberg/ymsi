@@ -1,15 +1,26 @@
 import express, { Request, Response } from "express";
 import passport from "passport";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import User from "../models/userSchema";
-import UserGroup from "../models/userGroup";
+import UserGroup from "../models/userGroupSchema";
 
+
+const secret = process.env.JWT_SECRET
 const userController = express.Router();
 
-/ [/api/users] /;
+// write a user.controller.ts file with all imports for this project
+
+
+
+
+
+
+
+// [/api/users] /;
 // GET (PUBLIC)
 // retrieve all users
-userController.get("/", (req, res) => {
+userController.get("/", (req: Request, res: Response) => {
   User.find()
     .populate("usergroup")
     .then((users) => {
@@ -22,7 +33,7 @@ userController.get("/", (req, res) => {
 // [/api/users] /:id
 // GET (PUBLIC)
 // get info from a single user
-userController.get("/:id", (req, res) => {
+userController.get("/:id", (req: Request, res: Response) => {
   User.findById(req.params.id)
     .then((user) => res.status(200).json({ user }))
     .catch((err) =>
@@ -67,7 +78,7 @@ userController.post(
 // [/api/users] /register
 // POST (PUBLIC)
 // register a new user
-userController.post("/register", (req, res) => {
+userController.post("/register", (req: Request, res: Response) => {
   const { username, email, password } = req.body;
   User.findOne({ email }).then((user) => {
     UserGroup.findOne({ auth_level: 2 }).then((IUserGroup) => {
@@ -102,7 +113,7 @@ userController.post("/register", (req, res) => {
 // [/api/users] /login
 // POST (PUBLIC)
 // login a user
-userController.post("/login", (req, res) => {
+userController.post("/login", (req: Request, res: Response) => {
   const { email, password } = req.body;
   User.findOne({ email }, "+password").then((user) => {
     if (!user) {
@@ -136,3 +147,5 @@ userController.post("/login", (req, res) => {
     });
   });
 });
+
+export default userController;

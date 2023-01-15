@@ -25,6 +25,6 @@ usersRoute.delete('/users', (req:Request, res:Response) => {
 })
 
 
-export default usersRoute
+export default usersRoute;
 
 

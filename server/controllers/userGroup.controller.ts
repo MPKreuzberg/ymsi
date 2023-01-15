@@ -1,8 +1,8 @@
-import express, { Request, Response } from "express";
-import passport from "passport";
+ import express, { Request, Response } from "express";
+ import passport from "passport";
 
-const userGroupController = express.Router();
-import UserGroup from "../models/userGroup";
+ const userGroupController = express.Router();
+ import UserGroup from "../models/userGroupSchema";
 
 // [/api/usergroups] /
 // GET (PUBLIC)
@@ -79,3 +79,5 @@ userGroupController.post(
       );
   }
 );
+
+export default userGroupController;

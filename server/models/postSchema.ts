@@ -6,7 +6,7 @@ export interface IPost extends Document {
 	shortId: string;
 	message: string;
 	author: string;
-	topis: string;
+	topic: string;
 	timestamp: number;
 }
 
