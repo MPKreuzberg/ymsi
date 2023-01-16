@@ -14,7 +14,7 @@ function App() {
       {/* <ResetPassword /> */}
       {/* <CreateUserPage /> */}
       {/* <LoginPage /> */}
-      {/* <Nav />
+      <Nav />
       <div className='flex-app'>
       <SideBarLeft />
       <div className='mainContent'>
@@ -22,7 +22,7 @@ function App() {
       <Post />
       </div>
       <SideBarRight />
-      </div> */}
+      </div>
     </div>
   );
 }
