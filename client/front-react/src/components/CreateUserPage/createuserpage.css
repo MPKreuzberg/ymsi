@@ -1,0 +1,54 @@
+.createuser-container {
+    background-color: var(--MainBGBlack);
+    width: 20rem;
+    height: 35rem;
+    margin: 10rem auto;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.logo{
+    width: 100%;
+    height: fit-content;
+    color: #fff;
+    font-family: var(--TextFont);
+    margin-top: -50px;
+}
+.logo hr{
+    width: 90%;
+    margin: 10px;
+}
+
+.create-account{
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    gap: 15px;
+}
+.create-account h3{
+    color: #fff;
+    font-family: var(--HeadingFont);
+}
+.create-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.create-input input{
+    background-color: var(--LightBGBlack);
+    border: none;
+    height: 2rem;
+    width: 10rem;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+#create-btn{
+    width: 4rem;
+    color: #fff;
+}

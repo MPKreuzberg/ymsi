@@ -1,6 +1,9 @@
 import './App.css';
+import { CreateUserPage } from './components/CreateUserPage/CreateUserPage';
+import { LoginPage } from './components/LoginPage/LoginPage';
 import Nav from './components/Navigation/Nav.jsx';
 import Post from './components/Post/Post';
+import { ResetPassword } from './components/ResetPassword/ResetPassword';
 import SideBarLeft from './components/SideBarLeft/SideBarLeft';
 import SideBarRight from './components/SideBarRight/SideBarRight';
 import Trending from './components/Trending/Trending';
@@ -8,7 +11,10 @@ import Trending from './components/Trending/Trending';
 function App() {
   return (
     <div className="App">
-      <Nav />
+      {/* <ResetPassword /> */}
+      {/* <CreateUserPage /> */}
+      {/* <LoginPage /> */}
+      {/* <Nav />
       <div className='flex-app'>
       <SideBarLeft />
       <div className='mainContent'>
@@ -16,7 +22,7 @@ function App() {
       <Post />
       </div>
       <SideBarRight />
-      </div>
+      </div> */}
     </div>
   );
 }
