@@ -1,30 +1,22 @@
-import express, { Request, Response } from 'express'
+import express from 'express';
+import { protect }  from '../models/authMiddleware'
 
+import {
+    getUsersHandler,
+    createUserHandler,
+    getUserHandler,
+    deleteUserHandler,
+    updateUserHandler,
+    loginUserHandler,
+} from '../controllers/usercontroller';
+const userRoutes = express.Router();
 
-const usersRoute = express.Router()
+userRoutes.route('/').get(protect, getUsersHandler).post(createUserHandler);
+userRoutes.route('/login').post(loginUserHandler);
+userRoutes
+    .route('/:id')
+    .get(getUserHandler)
+    .put(protect, updateUserHandler)
+    .delete(protect, deleteUserHandler);
 
-
-
-
-
-
-usersRoute.get('/users', (req:Request, res:Response) => {
-    res.send('Finally on track!')
-    })
-
-usersRoute.post('/users', (req:Request, res:Response) => {
-	res.send('Post request on users!')
-})
-
-usersRoute.patch('/users', (req:Request, res:Response) => {
-	res.send('Patch request on users!')
-})
-
-usersRoute.delete('/users', (req:Request, res:Response) => {
-	res.send('Delete request on users!')
-})
-
-
-export default usersRoute;
-
-
+export default userRoutes;
