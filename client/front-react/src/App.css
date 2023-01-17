@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --HeadingFont: 'Nunito Sans', sans-serif;
+    --TextFont: 'Roboto',sans-serif;
+    --MainBGBlack: #1A1A1B;
+    --LightBGBlack: #272729;
+    --ThinBGBlack: #373737;
+
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.App{
+    display: flex;
+    background-color: #2C2C2C;
+
+}
+.flex-app{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 5rem;
+}

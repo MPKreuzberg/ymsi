@@ -1,0 +1,29 @@
+.sidebarleft-topics{
+    background-color: #373737;
+    width: 11rem;
+    height: 20rem;
+    border-radius: 5px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 10px;
+    color: white;
+}
+
+.topics-categories ul{
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: var(--TextFont);
+}
+.topics-categories ul li{
+    display: flex;
+    gap: 10px;
+}
+
+.topics-header h3{
+    font-family: var(--HeadingFont);
+}
