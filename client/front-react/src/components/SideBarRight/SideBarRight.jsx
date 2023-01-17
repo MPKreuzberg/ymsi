@@ -76,5 +76,3 @@ export default function SideBarRight() {
     </div>
   )
 }
-
-{/* <FaUser /> <h4>@Username</h4> */}

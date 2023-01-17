@@ -5,6 +5,8 @@ import Logo from '../../assets/logoymsi.svg'
 export const CreateUserPage = () => {
   return (
     <div className='createuser-container'>
+      <div className="create-acc">
+
         <div className="logo">
             <img src={Logo} alt="" />
             <p>A place to share knowledge</p>
@@ -19,6 +21,7 @@ export const CreateUserPage = () => {
                 <input type="submit" value="Submit" id='create-btn' />
             </div>
         </div>
+      </div>
     </div>
   )
 }

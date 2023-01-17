@@ -5,6 +5,7 @@ import Logo from '../../assets/logoymsi.svg'
 export const LoginPage = () => {
   return (
     <div className='loginpage-container'>
+      <div className="login">
         <div className="logo">
             <img src={Logo} alt="" />
             <h3>Login</h3>
@@ -15,8 +16,9 @@ export const LoginPage = () => {
             <input type="submit" value='Submit' id='login-btn'/>
         </div>
         <div className="reset-password">
-            <p>Forgot Password? <a href="#">Click here</a> to Reset Password</p>
+            <p>Forgot Password? <a href="/recover">Click here</a> to Reset Password</p>
         </div>
+      </div>
     </div>
   )
 }

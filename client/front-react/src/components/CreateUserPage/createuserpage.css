@@ -1,14 +1,21 @@
 .createuser-container {
-    background-color: var(--MainBGBlack);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.create-acc{
     width: 20rem;
-    height: 35rem;
-    margin: 10rem auto;
+    height: 30rem;
     border-radius: 14px;
+    background-color: var(--MainBGBlack);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 10px;
+    
 }
 .logo{
     width: 100%;
