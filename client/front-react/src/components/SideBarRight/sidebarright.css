@@ -11,14 +11,16 @@
     color: green;
     font-family: var(--HeadingFont);
     padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #BEB7B7;
 }
 .users{
     display: flex;
     gap: 1rem;
     flex-direction: column;
     color: white;
-    font-family: var(--HeadingFont);
     width: 100%;
+
 }
 .users img{
     width: 2rem;
@@ -29,4 +31,6 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    font-family: var(--TextFont);
+    font-size: .8rem;
 }
