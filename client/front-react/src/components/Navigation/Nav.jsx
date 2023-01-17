@@ -12,7 +12,7 @@ export default function Nav() {
                 <img src={Logo} alt="" />
             </div>
             <div className="nav-input">
-                <input type="search" name="searchInput" id="searchInput" placeholder='Search ymsi....' />
+                <input type="search" name="searchInput" id="searchInput" placeholder='Search ymsi....'/>
             </div>
             <div className="nav-buttons">
                 <Link to="/login" relative="path"><button className="login">Login</button></Link>

@@ -6,6 +6,7 @@ const FAKEUSERS = [
         avatar: "https://i.picsum.photos/id/469/200/200.jpg?hmac=r_nEPJ5ExnhVEQSrNc19WUPConxJzBC929FJHl_Y5N4",
         content: "https://loremflickr.com/640/360",
         likes: 0,
+        isOnline: true,
     },
     {
         id: 2,
