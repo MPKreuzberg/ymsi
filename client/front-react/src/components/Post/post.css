@@ -70,9 +70,12 @@
     height: 21.5rem;
     background-color: var(--LightBGBlack);
     border-radius: 4px;
-
 }
 
+.main-content img{
+    width: 95%;
+    height: 21.5rem;
+}
 
 
 .bottom-btn{

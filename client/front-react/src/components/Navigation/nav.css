@@ -13,7 +13,7 @@
 }
 .nav-input input{
     border-radius: 4px;
-    width: 14rem;
+    width: 20rem;
     height: 2rem;
     border: none;
     background-color: var(--LightBGBlack);
@@ -29,13 +29,16 @@
     gap: 1rem;
 }
 .nav-buttons button{
-    width: 5rem;
+    width: 5.5rem;
     height: 2.1rem;
     border-radius: 14px;
     font-weight: bold;
     background-color: #717171;
     color: #fff;
     font-family: var(--HeadingFont);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .userIcon{

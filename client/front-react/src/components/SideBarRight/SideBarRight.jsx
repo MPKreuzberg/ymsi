@@ -1,62 +1,7 @@
 import React from 'react'
 import './sidebarright.css'
-const USERS = [
-  {
-    id: 1,
-    username: "DummyUserName",
-    avatar: "https://via.placeholder.com/100"
-  },
-  {
-    id: 2,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-  {
-    id: 3,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-  {
-    id: 4,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 5,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 6,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 7,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 8,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 9,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 10,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  },
-    {
-    id: 11,
-    username: "BLABLA",
-    avatar: "https://via.placeholder.com/100"
-  }
-]
+import USERS from '../../FAKEDATA.js'
+
 
 const userOnline = USERS.map((user) => {
   return(
