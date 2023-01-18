@@ -6,5 +6,5 @@ Members  Saray, Micha, Yasin, Igor
 
 Stack: MERN
 
-
+Frontend: Next.js, Tailwindcss, React Icons, Google Fonts
 
