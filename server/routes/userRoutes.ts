@@ -1,5 +1,5 @@
 import express from 'express';
-import { protect }  from '../models/authMiddleware'
+//import { protect }  from '../models/authMiddleware'
 
 import {
     getUsersHandler,
@@ -11,12 +11,12 @@ import {
 } from '../controllers/usercontroller';
 const userRoutes = express.Router();
 
-userRoutes.route('/').get(protect, getUsersHandler).post(createUserHandler);
+userRoutes.route('/').get(getUsersHandler).post(createUserHandler);
 userRoutes.route('/login').post(loginUserHandler);
 userRoutes
     .route('/:id')
     .get(getUserHandler)
-    .put(protect, updateUserHandler)
-    .delete(protect, deleteUserHandler);
+    .put(updateUserHandler)
+    .delete(deleteUserHandler);
 
 export default userRoutes;

@@ -20,6 +20,9 @@ export async function getUsers(): Promise<UserType[]> {
 
 export async function createUser(user: UserType): Promise<UserReturnType> {
     const sanitizedUser = await sanitizeUser(user);
+    console.log('*****')
+    console.log(sanitizedUser);
+    
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(sanitizedUser.password, salt);
 
@@ -59,6 +62,8 @@ export async function getUserById(userId: string): Promise<IUserSchema> {
         throw ErrorHandler(err);
     }
 }
+
+
 
 export async function loginUser(
     email: string,
