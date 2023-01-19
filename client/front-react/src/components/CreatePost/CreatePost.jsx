@@ -1,6 +1,5 @@
 import React from "react";
 import "./createpost.css";
-import {withRouter} from "react-router-dom";
 import {
   AiOutlineCloudUpload,
   AiOutlineEdit,
@@ -61,4 +60,3 @@ export function CreatePost() {
   );
 }
 
-export default withRouter(CreatePost)
