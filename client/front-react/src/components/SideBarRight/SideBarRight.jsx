@@ -5,7 +5,7 @@ import USERS from '../../FAKEDATA.js'
 
 const userOnline = USERS.map((user) => {
   return(
-    <div className='user-display'>
+    <div className='user-display' key={user.id}>
       <img src={user.avatar} alt="" /> <h4>{user.username}</h4>
     </div>
   )

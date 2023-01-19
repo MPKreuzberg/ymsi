@@ -51,6 +51,7 @@
 #login-btn{
     width: 4rem;
     color: #fff;
+    cursor: pointer;
 }
 
 .reset-password{

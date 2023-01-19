@@ -1,0 +1,47 @@
+.createPost {
+    width: 40rem;
+    height: 4rem;
+    border-radius: 4px;
+    background-color: var(--MainBGBlack);
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    margin: 10px auto;
+}
+
+.createpost-form{
+    width: 90%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: var(--ThinBGBlack);
+}
+.createpost-form button{
+    background: transparent;
+    border: none;
+}
+.create-avatar{
+    color: white;
+    height: 2rem;
+    width: 2rem;
+}
+
+.imgupload{
+    color: white;
+    width: 2rem;
+    height: 1.3rem;
+}
+
+
+#post-title{
+    width: 25rem;
+    height: 2rem;
+    background-color: var(--ThinBGBlack);
+    border: 1px solid rgba(255, 255, 255, 0.375);
+    border-radius: 4px;
+    padding: 10px;
+    outline: none;
+    color: white;
+}

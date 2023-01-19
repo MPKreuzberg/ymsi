@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import './post.css'
-import {FaArrowUp, FaArrowDown,FaCommentAlt,FaShare,FaBookmark} from 'react-icons/fa';
+import {FaArrowUp, FaArrowDown,FaCommentAlt,FaShare,FaBookmark,FaPlus} from 'react-icons/fa';
 import POSTS from '../../FAKEDATA.js'
+
+
 
 
 export default function Post() {
@@ -21,16 +23,18 @@ export default function Post() {
     <div className='post-container'>
                 {POSTS.map((post)=> {
                   return(
+                    <div className="test" key={post.id}>
+
                     <div className="post-content">
-                      <div className="post-header">
-                        <div className="userIcon">
-                        <img src={post.avatar} alt="userimg"/>
+                      <div className="post-header" >
+                        <div className="userIcon" >
+                        <img src={post.avatar} alt="userimg" />
                         <p >@{post.username}</p>
                       </div>
-                      <h3>{post.title}</h3>
+                      <h3 >{post.title}</h3>
                     </div>
 
-                    <div className="post-main">
+                    <div className="post-main" >
                       <div className="left-btn">
                         <FaArrowUp className='arrows' onClick={handleLike} />
                         <p>{like}</p>
@@ -41,7 +45,7 @@ export default function Post() {
                       </div>
                     </div>
 
-                    <div className="bottom-btn">
+                    <div className="bottom-btn" >
                       <button className="comment-btn">
                         <FaCommentAlt className='bottom-icons' />
                         <p>255 Comments</p>
@@ -56,6 +60,7 @@ export default function Post() {
                       </button>
                     </div>
                 </div>
+                    </div>
                   )
                 })}
     </div>

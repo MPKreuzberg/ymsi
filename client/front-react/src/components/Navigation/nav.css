@@ -4,7 +4,7 @@
     background-color: var(--MainBGBlack);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: sticky;
     top: 0;
     padding: 20px;
@@ -34,19 +34,24 @@
     height: 2.1rem;
     border-radius: 14px;
     font-weight: bold;
-    background-color: #717171;
-    color: #fff;
-    font-family: var(--HeadingFont);
+    border: none;
+    outline: 1px solid;
+    font-family: var(--TextFont);
     display: flex;
     align-items: center;
     justify-content: center;
-
+}
+.login{
+    color: #fff;
+}
+.signup{
+    color: black;
 }
 .userIcon{
-    margin-left: 10px;
     color: white;
     width: 2rem;
     height: 3rem;
+    cursor: pointer;
 }
 
 #searchInput::placeholder{
