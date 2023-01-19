@@ -1,11 +1,7 @@
 import express, { Request, Response } from 'express'
 
 
-const usersRoute = express.Router()
-
-
-
-
+const usersRoute = express.Router();
 
 
 usersRoute.get('/users', (req:Request, res:Response) => {
