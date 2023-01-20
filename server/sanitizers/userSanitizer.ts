@@ -2,6 +2,10 @@ import { checkIsValidObjectId } from '../database/db';
 import { emailRegex } from '../schema/userSchema';
 import { UserSanitizerType, UserType } from '../types/UserTypes';
 import HttpException from '../utils/httpException';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+
+
 
 export async function sanitizeUser(
     users: UserType

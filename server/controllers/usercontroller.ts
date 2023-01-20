@@ -1,13 +1,12 @@
 import { Response, Request } from 'express';
 import asyncHandler from 'express-async-handler';
 
-import {
+import updateUser, {
     createUser,
     deleteUser,
     getUserById,
     getUsers,
     loginUser,
-    updateUser,
 } from '../services/userService';
 
 // @desc Get all User
@@ -71,8 +70,10 @@ export const deleteUserHandler = asyncHandler(
 // @access Private
 export const updateUserHandler = asyncHandler(
     async (req: Request, res: Response) => {
-        const user = await updateUser(req.params.id, req.body);
+        const user =  await updateUser(req.params.id, req.body);
 
         res.json(user);
     }
 );
+
+

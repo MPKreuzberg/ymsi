@@ -16,7 +16,7 @@ userRoutes.route('/login').post(loginUserHandler);
 userRoutes
     .route('/:id')
     .get(getUserHandler)
-    .put(updateUserHandler)
+    .patch(updateUserHandler)
     .delete(deleteUserHandler);
 
 export default userRoutes;

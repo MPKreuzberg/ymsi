@@ -1,4 +1,4 @@
-
+import cors from 'cors'
 import express from 'express';
 import * as Colors from 'colors.ts';
 import morgan from 'morgan'
@@ -15,6 +15,7 @@ export const db = async (): Promise<void> => {
 void db();
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(morgan("dev"))
 

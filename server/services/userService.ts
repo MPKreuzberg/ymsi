@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import { deleteUserHandler } from '../controllers/usercontroller';
 
 import { checkIsValidObjectId } from '../database/db';
 import UserModel from '../models/usersModel'
@@ -99,16 +100,20 @@ export async function loginUser(
     }
 }
 
-export async function updateUser(
+
+export default async function updateUser(
     userId: string,
     user: UserType
 ): Promise<IUserSchema> {
     checkIsValidObjectId(userId);
 
-    const sanitizedUser = sanitizeUser(user);
+    const sanitizedUser = await sanitizeUser(user);
+console.log('updateUser Sanitizer, userService, line 111');
+console.log(sanitizedUser)
 
     try {
         const updatedUser = await UserModel.findByIdAndUpdate(
+                    
             userId,
             sanitizedUser,
             { new: true }
@@ -120,6 +125,7 @@ export async function updateUser(
         throw ErrorHandler(err);
     }
 }
+
 
 export async function deleteUser(userId: string): Promise<void> {
     checkIsValidObjectId(userId);
