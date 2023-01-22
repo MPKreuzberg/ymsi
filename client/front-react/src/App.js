@@ -4,7 +4,7 @@ import { CreateUserPage } from './components/CreateUserPage/CreateUserPage';
 import { LoginPage } from './components/LoginPage/LoginPage';
 import { ResetPassword } from './components/ResetPassword/ResetPassword';
 import { CreatePost } from './components/CreatePost/CreatePost';
-import { UserProfile} from './components/UserPofile/UserPofile';
+import { UserProfile} from './components/UserProfile/UserProfile';
 import Home from './Home.jsx';
 
 function App() {
