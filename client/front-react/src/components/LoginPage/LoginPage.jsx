@@ -1,6 +1,7 @@
 import React from 'react'
 import './loginpage.css'
 import Logo from '../../assets/logoymsi.svg'
+import { Navigate } from 'react-router-dom';
 
 export const LoginPage = () => {
   return (

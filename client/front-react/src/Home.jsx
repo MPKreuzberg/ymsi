@@ -7,6 +7,9 @@ import SideBarLeft from './components/SideBarLeft/SideBarLeft';
 import SideBarRight from './components/SideBarRight/SideBarRight';
 import Trending from './components/Trending/Trending';
 
+
+
+
 function Home() {
   return (
     <div className='HomePage-container'>

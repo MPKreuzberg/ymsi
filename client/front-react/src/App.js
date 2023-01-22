@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CreateUserPage } from './components/CreateUserPage/CreateUserPage';
 import { LoginPage } from './components/LoginPage/LoginPage';
 import { ResetPassword } from './components/ResetPassword/ResetPassword';
+import { CreatePost } from './components/CreatePost/CreatePost';
+import { UserProfile} from './components/UserPofile/UserPofile';
 import Home from './Home.jsx';
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
           <Route path='/login' element={<LoginPage/>} />
           <Route path="/signup" element={<CreateUserPage />} />
           <Route path='/recover' element={<ResetPassword />} />
+        <Route path='/createPost'element={< CreatePost />} />
+        <Route path='/profile'element={< UserProfile />} />
+        
         </Routes>
       </div>
     </Router>
